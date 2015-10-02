@@ -10,6 +10,7 @@ output: html_document
 ####This is project 2 for Dr. Cannata's CS 329 Data Visualization class.
 
 ####This is how my RStudio is configured:
+
 ```{r}
 sessionInfo()
 ```
@@ -24,7 +25,19 @@ We operated on a CSV file, uploaded to the Oracle database, in R. Below, we init
 source("../01 Data/Initialize.R", echo = TRUE)
 ```
 
+Here is our R_ETL file's operations, which allow us to "clean" the data in RStudio and export it to SQL.
 
+```{r}
+source("../01 Data/R_ETL.R", echo = TRUE)
+```
+
+We used the above SQL statement to create the College Grad table in SQL.
+
+Finally, here is our retrieval file, where we pull the data back from SQL and display the "head" and "summary" properties of our data.
+
+```{r}
+source("../01 Data/Retrieval.R", echo = TRUE)
+```
 
 ### Hypothesis 1: Average University Debt by State
 
@@ -35,7 +48,7 @@ What we want to know is, what is the most indebting state/region of the country 
 ##### Table and Visualization
 
 ```{r}
-source("../01 Data/Workflow1.R", echo = TRUE)
+source("../02 Data Wrangling/Workflow1.R", echo = TRUE)
 ```
 
 
@@ -47,29 +60,29 @@ From this data, we can see that, on average, South Dakota, Vermont and Nebraska 
 
 ##### Introduction
 
-We wish to know about _____. Our hypothesis is that _____. 
+Our second experiment expands on the first. We want to know how the average percentage of students needing loans correlates with the average debt upon graduation, and analyze this correlation by regions. This is meaningful because it is a better indicator of the financial aid and cost of attendance at these states. For example, if a particular state has a relatively high average debt upon graduation compared to a relatively low percentage of students needing loans, this suggests that the cost of attendance in that state may be higher (increasing average debt upon graduation) but that more students would have financial aid at these schools (decreasing the percentage of students needing loans). Our hypothesis is that states in the Northeast and North Central regions will have higher debts coupled with lower percentage seeking loans, while states in the South and West will have the opposite.
 
 ##### Data and Visualizations
 
 ```{r}
-source("../01 Data/Workflow2.R", echo = TRUE)
+source("../02 Data Wrangling/Workflow2.R", echo = TRUE)
 ```
 
 ##### Conclusions
 
-The data wrangling and visualization revealed that ____. This [supports/refutes] our hypothesis.
+The data wrangling and visualization revealed that our hypothesis was mostly correct. There is a fairly strong correlation between the percentage of students needing loans and average debt upon graduation; however, as we predicted, states in the northeast and north central are skewed toward having higher debts and having less percent of students needing loans. This makes sense because the cost of living in New York, Massachusetts, Pennsylvania, etc. is higher so these colleges would be more expensive. However, southern colleges required higher debts than we thought they would. Perhaps this is because the population there is generally not as affluent as in the northeast, so students need to borrow more money there.
 
 ###Experiment 3: Examining success in high school and post-graduation, with race
 
 ##### Introduction
 
-We wish to know how success in high school, and after college graduation, relates to race. We quantify success in high school as an average SAT score, and success after college graduation as initial income. Based on presumed US stereotypes of success by race, we would hypothesize that whites blanket and establish a heavy backgroup and average, Asians perform above average in both, while Blacks and Hispanics score low-medium average for both.
+We wish to know how success in high school, and after college graduation, relates to race. We quantify success in high school as an average SAT score, and success after college graduation as initial income. Based on presumed US stereotypes of success by race, we would hypothesize that whites blanket and establish a heavy backgroup and average, Asians perform above average in both, while Blacks and Hispanics score low-medium average for both. Just to clarify - for this visualization, we calculated the majority race in each college and assigned that college's data point the appropriate color.
 
 ##### Table and Visualizations
 
 
 ```{r}
-source("../01 Data/Workflow3.R", echo = TRUE)
+source("../02 Data Wrangling/Workflow3.R", echo = TRUE)
 ```
 
 ##### Conclusions

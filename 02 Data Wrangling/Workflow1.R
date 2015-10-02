@@ -1,8 +1,5 @@
 # Workflow 1
 
-
-misc_names <- array("Virgin Islands", "Puerto Rico", "Washington, D.C.")
-
 # First the table
 df %>% select(PERCENT_FINLOAN, STATE, AVGGRADDEBT) %>% filter(AVGGRADDEBT != "null", PERCENT_FINLOAN != "null") %>% mutate(state_name = state.name[match(STATE, state.abb)]) %>% group_by(state_name) %>% summarize(state_avg_loan = mean(as.numeric(as.character(PERCENT_FINLOAN))), state_avg_debt = mean(as.numeric(as.character (AVGGRADDEBT)))) %>% tbl_df
 
