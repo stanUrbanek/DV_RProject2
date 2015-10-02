@@ -1,0 +1,78 @@
+---
+title: "USUniversities.Rmd"
+author: "Varun Parameswaran, Stanley Urbanek"
+date: "October 2, 2015"
+output: html_document
+---
+
+#University Demographics and Debt by State
+
+####This is project 2 for Dr. Cannata's CS 329 Data Visualization class.
+
+####This is how my RStudio is configured:
+```{r}
+sessionInfo()
+```
+
+### Introduction
+
+We wished to know about the demographics of universities around the United States. We located a data set that was a list of ~8000 US universities with demographic make up, SAT Scores, initial income post graudation, and percentage taking a financial loan. We will run 3 experiments to draw conclusions about US Universities.
+
+We operated on a CSV file, uploaded to the Oracle database, in R. Below, we initialize our system. 
+
+```{r}
+source("../01 Data/Initialize.R", echo = TRUE)
+```
+
+
+
+### Hypothesis 1: Average University Debt by State
+
+##### Introduction
+
+What we want to know is, what is the most indebting state/region of the country to attend college? In this data, we can extract generalizations about the quality of colleges in the region (more indebting ~> more expensive ~> higher quality facilities, faculty), and about the economic situation of the area (more expensive ~> better/worse fiscally, or far more people in the area). What we expect, is the North East, and California, to be the most expensive, due to concentration of higher tier schools, such as Harvard, MIT, and CalTech. We expect the Pacific Island region, and midwest, area to be the least expensive.
+
+##### Table and Visualization
+
+```{r}
+source("../01 Data/Workflow1.R", echo = TRUE)
+```
+
+
+##### Analysis
+From this data, we can see that, on average, South Dakota, Vermont and Nebraska are the most indebting states, while Wyoming, New Jersey, and Hawaii are the least. This does not support our hypothesis. This is interesting because this tells us that South Dakota and Nebraska, while more sparsely populated, have presumably a highest quality colleges/high density of affluent people. This indicates that they might be considered a destination college location. Conversely, this is interesting because Hawaii is one of the least indebting, perhaps hinging on the quality they provide/demographic they service, or some lower cost of living. 
+
+
+###Experiment 2: 
+
+##### Introduction
+
+We wish to know about _____. Our hypothesis is that _____. 
+
+##### Data and Visualizations
+
+```{r}
+source("../01 Data/Workflow2.R", echo = TRUE)
+```
+
+##### Conclusions
+
+The data wrangling and visualization revealed that ____. This [supports/refutes] our hypothesis.
+
+###Experiment 3: Examining success in high school and post-graduation, with race
+
+##### Introduction
+
+We wish to know how success in high school, and after college graduation, relates to race. We quantify success in high school as an average SAT score, and success after college graduation as initial income. Based on presumed US stereotypes of success by race, we would hypothesize that whites blanket and establish a heavy backgroup and average, Asians perform above average in both, while Blacks and Hispanics score low-medium average for both.
+
+##### Table and Visualizations
+
+
+```{r}
+source("../01 Data/Workflow3.R", echo = TRUE)
+```
+
+##### Conclusions
+The data wrangling and visualization revealed that White demographic establishes the average, Asians perform above average in both, while Blacks and Hispanics score low-medium average for both. This supports our hypothesis. This is interesting because it demonstrates that there may be some truth behind the racial stereotypes in the US. At least, it indicates that there may be some grounding in a truth.
+
+
